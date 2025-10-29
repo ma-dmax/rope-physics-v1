@@ -1,0 +1,36 @@
+/*.point{
+    position: fixed;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(var(--x, 0px), var(--y, 0px)) translate(-50%, -50%);
+}*/
+.point{
+  position: fixed;
+  left: 0; top: 0;
+  width: 25px; height: 25px;
+  border-radius: 50%;
+  background: #ff7a18;
+  transform: translate(var(--x, 0px), var(--y, 0px)) translate(-50%, -50%);
+  cursor: grab;
+}
+.p1{
+    background: blue;
+}
+.p2{
+    background: rgb(255, 0, 200);
+}
+.p3{
+    background: rgb(255, 0, 0);
+}
+#rope{
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* чтобы клик проходил к точкам */
+}
+
+/* точки */
+
+.point:active{ cursor: grabbing; }

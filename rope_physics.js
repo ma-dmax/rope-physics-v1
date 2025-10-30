@@ -1,4 +1,30 @@
-// canvas setup
+const CONFIG = {
+  points: 5,
+  size: 25,
+  color: "#ff7a18",
+  max_pull: 50
+}
+
+const points = [];
+function dot_create(config){
+  for(let i = 0; i < config.points; i++){
+    const el = document.createElement("div");
+    el.className = "point" + " p"+(i);
+
+    el.style.width = config.size +"px";
+    el.style.height = config.size+ "px";
+    el.style.background = config.color;
+
+    el.style.setProperty('--x', i*50+"px");
+    el.style.setProperty('--y', i*50+"px");
+
+    document.body.appendChild(el);
+    points.push(el);
+
+  };
+}
+dot_create(CONFIG);
+
 const canvas = document.getElementById('rope');
 const ctx = canvas.getContext('2d');
 function resize() {
@@ -19,8 +45,6 @@ function setPos(el, x, y){
   el.style.setProperty('--x', x + 'px');
   el.style.setProperty('--y', y + 'px');
 }
-
-const points = Array.from(document.querySelectorAll('.point'));
 
 let activePoint = null;
 points.forEach(p => {
@@ -56,3 +80,4 @@ function draw() {
   requestAnimationFrame(draw);
 }
 draw();
+

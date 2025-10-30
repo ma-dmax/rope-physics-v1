@@ -10,10 +10,14 @@
 .point{
   position: fixed;
   left: 0; top: 0;
-  width: 25px; height: 25px;
   border-radius: 50%;
-  background: #ff7a18;
-  transform: translate(var(--x, 0px), var(--y, 0px)) translate(-50%, -50%);
+  /*width: 25px; height: 25px;
+  
+  background: #ff7a18;*/
+  /*transform: translate(var(--x, 0px), var(--y, 0px)) translate(-50%, -50%);*/
+  transform:
+  translate(var(--x), var(--y))
+  translate(-50%, -50%);
   cursor: grab;
 }
 .p1{
